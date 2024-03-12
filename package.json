@@ -1,5 +1,5 @@
 {
-  "name": "kinesis-consumer",
+  "name": "aws-kinesis-consumer",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,5 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Akash Sengar <akashsengar96@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-kinesis": "^3.529.1"
+  }
 }
