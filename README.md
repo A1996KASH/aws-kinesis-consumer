@@ -33,10 +33,15 @@ const options = {
 }
 const consumer = new KinesisConsumer()
 
-consumer.on('data', (data) => {
-    console.log('Received data:', data)
+consumer.on('data', (record) => {
+    console.log('Received data:', JSON.parse(Buffer.from(record.Data, 'base64').toString('utf-8')))
+    console.log('Partition Key:', record.PartitionKey)
+    console.log('Sequence Number:', record.SequenceNumber)
+    console.log('Approximate Arrival Time:', record.ApproximateArrivalTimestamp)
+
 }
 )
+
 consumer.on('error', (error) => {
     console.log('Error:', error)
 }

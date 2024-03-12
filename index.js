@@ -62,8 +62,7 @@ class KinesisConsumer extends EventEmitter {
     }
     processRecords(records) {
         records.forEach((record) => {
-            const payload = JSON.parse(Buffer.from(record.Data, 'base64').toString('utf-8'));
-            this.emit('data', payload);
+            this.emit('data', record);
         });
     }
 }
