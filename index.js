@@ -1,8 +1,6 @@
 const { KinesisClient, GetShardIteratorCommand, GetRecordsCommand, ListShardsCommand } = require("@aws-sdk/client-kinesis");
 const { EventEmitter } = require('events');
 
-// Function to process records
-
 class KinesisConsumer extends EventEmitter {
     constructor() {
         super();
@@ -10,7 +8,6 @@ class KinesisConsumer extends EventEmitter {
 
     async startConsumer(options) {
         const { credentials, region, streamName, shardIteratorType, pollingDuration, limit = 10 } = options;
-        // Check limit is between 1 and 10000 and polling duration is not less than 1000
         // Check limit is between 1 and 10000 and polling duration is not less than 1000
         if ((!limit || limit < 1 || limit > 10000) || (!pollingDuration || pollingDuration < 1000)) {
             throw new Error('Limit should be between 1 and 10000, and polling duration should be greater than or Equals to 1000');
