@@ -22,7 +22,7 @@ const KinesisConsumer = require('aws-kinesis-consumer')
 
 const options = {
     credentials: {
-        accessKeyId: 'XXXXXXXXXXXXXXXX'
+        accessKeyId: 'XXXXXXXXXXXXXXXX',
         secretAccessKey: 'XXXXXXXXXXXXXXXX'
     },
     region: 'ap-south-1',
